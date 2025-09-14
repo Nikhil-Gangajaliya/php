@@ -7,17 +7,15 @@
 </head>
 <body>
     <?php
-        include "db_connect.php"; // include connection
+        include "db_connect.php";
 
-        // Insert query
-        $sql = "insert into students (name,age) values ('Om',21)";
+        $sql = "update students set age = 22 where name ='OM'";
 
-        // Run query
         if(mysqli_query($conn,$sql)){
-            echo "Record inserted successfully";
+            echo "Record Updated Successfully";
         }
         else{
-            echo "Error : ".mysqli_error($conn);
+            echo "Error : ". mysqli_error($conn);
         }
         mysqli_close($conn);
     ?>
